@@ -4,6 +4,8 @@ exports.up = function (knex, Promise) {
     table.string('fName', '40').notNullable()
     table.string('lName', '40').notNullable()
     table.string('email', '100').notNullable()
+    table.string('contribution', '100').notNullable()
+    table.string('eventId', '40').notNullable()
     table.timestamps(true, true)
   })
 }
