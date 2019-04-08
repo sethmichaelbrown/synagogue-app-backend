@@ -7,6 +7,8 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
 var contributionsRouter = require('./routes/contributions');
+var eventsRouter = require('./routes/events');
+
 
 var app = express();
 
@@ -17,6 +19,8 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', contributionsRouter);
+app.use('/contributions', contributionsRouter);
+app.use('/events', eventsRouter);
+
 
 module.exports = app;
