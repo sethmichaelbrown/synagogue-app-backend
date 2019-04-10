@@ -4,7 +4,7 @@ const knex = require('../knex.js')
 
 //List (get all of the resource)
 router.get('/', function (req, res, next) {
-  res.sendStatus(200)
+  knex('contributions').select('*').then(data => res.status(200).json(data))
 })
 
 //Read (get one of the resource)
